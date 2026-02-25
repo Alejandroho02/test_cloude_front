@@ -10,11 +10,11 @@ Copilot interno. Permite a los operadores chatear con Claude, ver las respuestas
 
 
 <p aling="center">
-  <img src="./assets/preview_app_video.gif" width="700" />
+  <img src="/public/assets/preview_app_image.png" width="700" />
 </p>
 
 <p aling="center">
-  <img src="./assets/preview_app_image.png" width="700" />
+  <img src="/public/assets/preview_app_video.gif" width="700" />
 </p>
 
 
