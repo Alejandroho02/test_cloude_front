@@ -2,7 +2,7 @@
 
 Copilot interno. Permite a los operadores chatear con Claude, ver las respuestas en streaming en tiempo real y ejecutar **Action Cards** interactivas sin salir del chat.
 
-> **Repo backend:** [test_cloude_backend](https://github.com/tu-usuario/test_cloude_backend)
+> **Repo backend:** [test_cloude_backend](https://github.com/tu-Alejandroho02/test_cloude_backend)
 
 ---
 
