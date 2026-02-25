@@ -10,7 +10,7 @@ type ChatMessage = { role: Role; content: string };
 export type CardStatus = 'idle' | 'executed' | 'discarded';
 
 const CARD_REGEX = /<<<ACTION_CARD_START>>>([\s\S]*?)<<<ACTION_CARD_END>>>/g;
-const API_URL = 'http://192.168.100.8:8000/api/chat';
+const API_URL = `${import.meta.env.VITE_BASE_URL}/chat`;
 
 const parseCards = (text: string) =>
   Array.from(text.matchAll(CARD_REGEX))

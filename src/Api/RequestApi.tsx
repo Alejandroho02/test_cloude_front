@@ -3,7 +3,7 @@ import type { Message } from '../interfaces/message';
 
 export const chatApi = createApi({
   reducerPath: 'chatApi',
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),
   endpoints: (builder) => ({
     sendMessage: builder.mutation<void, { message: string; history: Message[] }>({
       queryFn: () => ({ data: undefined }),
