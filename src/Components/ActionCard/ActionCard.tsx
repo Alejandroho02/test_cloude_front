@@ -2,6 +2,7 @@ import { useState } from "react";
 import { type HtmlHTMLAttributes } from "react";
 import { Input } from "../input/input";
 import "./actioncard.scss";
+import type { CardStatus } from "../../Hooks/useChat";
 
 interface ActionCardProps extends HtmlHTMLAttributes<HTMLDivElement> {
   title: string;
@@ -16,7 +17,9 @@ interface ActionCardProps extends HtmlHTMLAttributes<HTMLDivElement> {
     label: string;
     action: string;
   }[];
-  onAction?: (action: string, payload: Record<string, string>) => void;
+  cardId?: string;
+  status?: CardStatus;
+  onAction?: (action: string, payload: Record<string, string>, cardId?: string) => void;
 }
 
 export const ActionCard = ({
@@ -25,6 +28,8 @@ export const ActionCard = ({
   form = [],
   actions = [],
   onAction,
+  cardId,
+  status,
   ...props
 }: ActionCardProps) => {
 
@@ -33,20 +38,33 @@ export const ActionCard = ({
   );
 
   const handleChange = (name: string, value: string) => {
-    setFormState((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormState((prev) => ({ ...prev, [name]: value }));
   };
+
+  if (status === 'executed') {
+    return (
+      <section className="action-card action-card--executed" {...props}>
+        <h2 className="action-card__title">{title}</h2>
+        <p className="action-card__status-text">✅ Ejecutado</p>
+      </section>
+    );
+  }
+
+  if (status === 'discarded') {
+    return (
+      <section className="action-card action-card--discarded" {...props}>
+        <h2 className="action-card__title">{title}</h2>
+        <p className="action-card__status-text">🗑️ Descartado</p>
+      </section>
+    );
+  }
 
   return (
     <section className="action-card" {...props}>
       <h2 className="action-card__title">{title}</h2>
 
       {text.map((itemText, index) => (
-        <p key={index} className="action-card__text">
-          {itemText}
-        </p>
+        <p key={index} className="action-card__text">{itemText}</p>
       ))}
 
       <div className="action-card__form">
@@ -56,9 +74,7 @@ export const ActionCard = ({
             label={item.label}
             value={formState[item.name] || ""}
             type={item.type || "text"}
-            onChange={(e) =>
-              handleChange(item.name, e.target.value)
-            }
+            onChange={(e) => handleChange(item.name, e.target.value)}
           />
         ))}
       </div>
@@ -68,7 +84,7 @@ export const ActionCard = ({
           {actions.map((btn, index) => (
             <button
               key={index}
-              onClick={() => onAction?.(btn.action, formState)}
+              onClick={() => onAction?.(btn.action, formState, cardId)}  
             >
               {btn.label}
             </button>

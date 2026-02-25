@@ -12,11 +12,12 @@ export const Chat = () => {
         setInput,
         textareaRef,
         isStreaming,
+        cardRegex,
         scrollRef,
-        cardRegex, 
         sideCards,
         messages,
         input,
+        cardStatuses
     } = useChat();
 
     useEffect(() => {
@@ -42,7 +43,7 @@ export const Chat = () => {
             </header>
 
             <div className="container-section-chat">
-   
+
                 <div className="container-chat">
 
                     <div className="chat-messages" ref={scrollRef}>
@@ -73,7 +74,7 @@ export const Chat = () => {
                             ref={textareaRef}
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            placeholder="Escribe lo que te interese..."
+                            placeholder="Pega el correo que te interesa transcribir"
                             className="chat-text-area"
                             disabled={isStreaming}
                             rows={1}
@@ -92,10 +93,18 @@ export const Chat = () => {
                 </div>
 
                 <div className="container-cards">
-                    <p>Comienza a editar</p>
-                    {sideCards.map((card, index) => (
-                        <ActionCard key={index} {...card} onAction={handleCardAction} />
-                    ))}
+                    {sideCards.map((card, index) => {
+                        const cardId = `${card.type ?? 'card'}-${index}`;
+                        return (
+                            <ActionCard
+                                key={cardId}
+                                {...card}
+                                cardId={cardId}
+                                status={cardStatuses[cardId]}
+                                onAction={handleCardAction}
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </section>
