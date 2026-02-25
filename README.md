@@ -8,10 +8,15 @@ Copilot interno. Permite a los operadores chatear con Claude, ver las respuestas
 
 ## Demo
 
-> 📸 _Screenshots / GIFs próximamente_
 
-![Preview de la app video](./assets/preview_app_video.gif)
-![Preview de la app](./assets/preview_app_image.png)
+<p aling="center">
+  <img src="./assets/preview_app_video.gif" width="700" />
+</p>
+
+<p aling="center">
+  <img src="./assets/preview_app_image.png" width="700" />
+</p>
+
 
 ---
 
