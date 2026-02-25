@@ -10,12 +10,8 @@ Copilot interno. Permite a los operadores chatear con Claude, ver las respuestas
 
 > 📸 _Screenshots / GIFs próximamente_
 
-<!-- Agrega aquí tus screenshots o GIFs del flujo:
-     1. Operador pega email de cliente
-     2. Texto aparece en streaming
-     3. Action Cards emergen en tiempo real
-     4. Operador edita campos y ejecuta acción
--->
+![Preview de la app video](./assets/preview_app_video.gif)
+![Preview de la app](./assets/preview_app_image.png)
 
 ---
 
