@@ -1,0 +1,16 @@
+@use "/styles/variables.scss" as vars;
+@use "/styles/fonts.scss" as fonts;
+
+
+.section_Button_styles{
+    background: var(--accent-color-foreground);
+    color: var(--text-color);
+    border-radius: vars.px_to_vw(12);
+    padding: vars.px_to_vw(10);
+    cursor: pointer;
+    @include vars.mobile-query{
+        border-radius: vars.px_to_vw(5, 2);
+        padding: vars.px_to_vw(5, 2);
+
+    }
+}

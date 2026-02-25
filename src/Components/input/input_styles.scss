@@ -1,0 +1,25 @@
+@use "/styles/fonts.scss" as fonts;
+
+.section_input{
+    display: flex;
+    flex-direction: column;
+    
+    .label_style{
+        padding-bottom: 6px;
+        font-size: 14px;
+        @include fonts.family-Helvetica-regular;
+    }
+    .input_style{
+        border: 1px solid #e2e8f0;
+        background: #ffffff;
+        padding: 10px 12px;
+        font-size: 14px;
+        border-radius: 12px;
+        color: #1e293b;
+        @include fonts.family-Helvetica-regular;
+    }
+    .container_icon_p{
+        color: black;
+    }
+
+}

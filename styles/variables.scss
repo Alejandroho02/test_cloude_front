@@ -1,0 +1,19 @@
+@function px_to_vw($px, $type: 1) {
+  @if $type == 1 {
+      @return (calc($px / 1920) * 100) + vw ;
+  } @else {
+      @return (calc($px / 393) * 100) + vw;
+  }
+}
+@mixin mobile-query {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+
+@mixin web-query {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
