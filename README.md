@@ -8,9 +8,13 @@ Este repositorio contiene la interfaz de operador del asistente de cotizaciones.
 
 ## Demo
 
-<img src="/assets/preview_app_image.png" alt="Captura de pantalla de la app" width="700" />
+<p aling="center">
+  <img src="/public/assets/preview_app_image.png" width="700" />
+</p>
 
-<img src="/assets/preview_app_video.gif" alt="Animación de uso" width="700" />
+<p aling="center">
+  <img src="/public/assets/preview_app_video.gif" width="700" />
+</p>
 
 ---
 
